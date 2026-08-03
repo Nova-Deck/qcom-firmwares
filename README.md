@@ -15,7 +15,14 @@ path (e.g. `qcom/sm8650/...`), so there is no per-SoC top-level directory:
     sha256sums.txt    # per-file sha256; paths are /lib/firmware-relative
     <blobs...>        # installed verbatim under /lib/firmware on the device
 
-Boards currently covered: Ayaneo Pocket S2 + KONKR Pocket FIT (SM8650 / Snapdragon 8 Gen 3).
+Boards currently covered:
+
+  * **SM8650** (Snapdragon 8 Gen 3): AYANEO Pocket S2, KONKR Pocket FIT.
+  * **SM8550** (Snapdragon 8 Gen 2): AYN Odin 2 / 2 Mini / 2 Portal / Thor,
+    AYANEO Pocket series, Retroid Pocket 6.
+
+Blobs are per-device even when two boards happen to share identical bytes — a device must
+never reference another device's path, or a later per-device fix silently regresses it.
 
 ## Consumed by novadeck
 
